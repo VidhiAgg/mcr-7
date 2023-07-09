@@ -24,8 +24,17 @@
 }
 
 .text{
+    cursor: pointer;
     padding: 20px;
     position: absolute;
-    top: 27rem;
+    top: 22rem;
+    color: white;
+}
+
+.text-destin{
+    cursor: pointer;
+    padding: 20px;
+    position: absolute;
+    top: 18rem;
     color: white;
 }

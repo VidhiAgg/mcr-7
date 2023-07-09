@@ -5,12 +5,13 @@ import { AppContext } from '../../context/AppContext';
 import { LocationOn } from '@mui/icons-material';
 
 const CountryDestinationPage = () => {
-    const{id} = useParams();
+    const{continentID, countryId} = useParams();
     const {dataDsisplay} = useContext(AppContext);
     const navigate = useNavigate();
-    const getCountry = dataDsisplay?.continents.find(data =>data.id === id)
-    const getRequireCountriesDestination = getCountry?.find( data=> 
-      data.id === parseInt(id))
+    const getCountry = dataDsisplay?.continents?.find(data =>data.id === parseInt(continentID))
+
+    const getRequireCountries = getCountry?.countries?.find( data=>  data.id === parseInt(countryId))
+      
   return (
     <div className='home-container'>
          <div className="header">
@@ -19,14 +20,14 @@ const CountryDestinationPage = () => {
         </div>
         <div className="continent-list">
 {
-    getRequireCountriesDestination?.map(data => {
+    getRequireCountries?.destinations?.map(data => {
         return (
             <div className="continent-card" key={data.id} onClick={(e)=>{
       e.stopPropagation();
-      navigate(`countries/${data.id}`)
+      navigate(`/continent/${continentID}/countries/${countryId}/destination/${data.id}`)
             }}>
       <img src={data.image}  alt ={data.name}/>
-      <span className='text'><LocationOn />{data.name}</span>
+      <span className='text-destin'><LocationOn />{data.name}</span>
        
             </div>
           )

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import "../Homepgae/homepage.css"
+import "./countries.css"
 import { AppContext } from '../../context/AppContext';
 import { LocationOn } from '@mui/icons-material';
 
@@ -21,10 +22,10 @@ const ContinentPage = () => {
         return (
             <div className="continent-card" key={data.id} onClick={(e)=>{
       e.stopPropagation();
-      navigate(`countries/${data.id}`)
+      navigate(`/continent/${id}/countries/${data.id}`)
             }}>
       <img src={data.image}  alt ={data.name}/>
-      <div className='text'><LocationOn />{data.name}</div>
+      <div className='text-name'><LocationOn />{data.name}</div>
        
             </div>
           )
