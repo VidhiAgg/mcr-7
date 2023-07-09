@@ -1,0 +1,31 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.continent-list{
+    display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+    justify-content: space-around;
+}
+
+.continent-card{
+    display: flex;
+    border-radius: 1rem;
+    
+    
+}
+.continent-card img{
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+}
+
+.text{
+    padding: 20px;
+    position: absolute;
+    top: 27rem;
+    color: white;
+}
